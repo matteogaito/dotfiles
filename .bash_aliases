@@ -1,0 +1,5 @@
+alias ls='ls -GFh'
+alias ssh='ssh -A'
+alias genpasswd='date +%s | shasum -a 256 | base64 | head -c 12 ; echo'
+alias digmx='dig $1 MX +noall +answer'
+alias dotfile='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
