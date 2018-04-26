@@ -1,10 +1,10 @@
 # My dotfiles
 
-there are a lot of method for put dotfile on git [link](https://dotfiles.github.io/)
+there are a lot of methods to put dotfile on git [link](https://dotfiles.github.io/)
 
 I use a very simple way, you need only git command :)
 
-The main concept of this method is use $HOME as workir but put on repo only what you *add* 
+The main concept of this method is to use $HOME as workir but put on repo only what you *add* 
 
 ````
 git init --bare $HOME/.dotfiles
@@ -23,7 +23,13 @@ dotfile config --local status.showuntrackedfiles no
 Perfect, now you can add new files
 ````
 dotfile add .vimrc
+dotfile commit
 ````
 
+For pushing on origin/master, remember to change the url with your remote repository
+````
+dotfile remote add origin git@github.com:matteogaito/dotfiles.git
+dotfile push origin master
+````
 
 
