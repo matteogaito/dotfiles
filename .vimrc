@@ -12,10 +12,13 @@ set number
 filetype plugin on
 syntax on
 
-" Vundle plugin manager
+"""" Vundle plugin manager
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 Plugin 'VundleVim/Vundle.vim'
+
+" Common Programming Support
+Plugin 'Townk/vim-autoclose'
 
 " Python-mode
 Plugin 'klen/python-mode'
