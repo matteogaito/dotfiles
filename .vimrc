@@ -3,12 +3,13 @@
 "--     by Matteo Gaito
 "-----------------------
 
-" Requirements
+"""" Requirements
 set nocompatible
 filetype off
 
-" Common Configurations
+"""" Common Configurations
 set number
+set ruler
 filetype plugin on
 syntax on
 
@@ -17,9 +18,23 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 Plugin 'VundleVim/Vundle.vim'
 
-" Common Programming Support
+"""" Common Programming Support
 Plugin 'Townk/vim-autoclose'
+Plugin 'scrooloose/nerdtree'
 
+"""" Interface 
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'ajh17/Spacegray.vim'
+" Theme and Styling 
+set t_Co=256
+set background=dark
+if (has("termguicolors"))
+  set termguicolors
+endif
+let base16colorspace=256  " Access colors present in 256 colorspace
+" colorscheme spacegray
+
+"""" Programming Section
 " Python-mode
 Plugin 'klen/python-mode'
 " Pylint configuration file
@@ -33,3 +48,6 @@ let g:pymode_options_max_line_length=120
 Plugin 'jamshedvesuna/vim-markdown-preview'
 let vim_markdown_preview_toggle=1
 let vim_markdown_preview_github=1
+
+"""" Mappings configurationn
+map <C-n> :NERDTreeToggle<CR>
