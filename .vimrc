@@ -9,9 +9,9 @@ filetype off
 
 """" Common Configurations
 set number
-set ruler
 filetype plugin on
 syntax on
+set backspace=indent,eol,start
 
 """" Vundle plugin manager
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -21,6 +21,15 @@ Plugin 'VundleVim/Vundle.vim'
 """" Common Programming Support
 Plugin 'Townk/vim-autoclose'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+
+"syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_enable_signs=1
+let g:syntastic_quiet_messages = {'level': 'warnings'}
+let g:syntastic_auto_loc_list=1
 
 """" Interface 
 Plugin 'ryanoasis/vim-devicons'
