@@ -7,6 +7,12 @@
 set nocompatible
 filetype off
 
+"""" Common Configurations
+set number
+syntax on
+set autoindent
+set backspace=indent,eol,start
+
 """" Vundle plugin manager
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
@@ -15,23 +21,13 @@ Plugin 'VundleVim/Vundle.vim'
 """" Common Programming Support
 Plugin 'Townk/vim-autoclose'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-
-"""" Interface 
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'ajh17/Spacegray.vim'
-" Theme and Styling 
-set t_Co=256
-set background=dark
-if (has("termguicolors"))
-  set termguicolors
-endif
-let base16colorspace=256  " Access colors present in 256 colorspace
-" colorscheme spacegray
 
 """" Programming Section
 " Python-mode
 Plugin 'klen/python-mode'
+setlocal foldmethod=expr
+setlocal foldexpr=pymode#folding#expr(v:lnum)
+setlocal foldtext=pymode#folding#text()
 " Pylint configuration file
 let g:pymode_lint_config = '$HOME/.pylint.rc'
 let g:pymode_options_max_line_length=120
@@ -50,11 +46,3 @@ Plugin 'rodjek/vim-puppet'
 
 """" Mappings configurationn
 map <C-n> :NERDTreeToggle<CR>
-
-"""" Common Configurations
-set number
-filetype plugin on
-filetype plugin indent on
-syntax on
-set autoindent
-set backspace=indent,eol,start
