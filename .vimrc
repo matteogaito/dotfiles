@@ -3,31 +3,33 @@
 "--     by Matteo Gaito
 "-----------------------
 
-"""" Requirements
+""" Requirements
 set nocompatible
 filetype off
 
-"""" Common Configurations
-set number
-syntax on
-set autoindent
-set backspace=indent,eol,start
-
-"""" Vundle plugin manager
+""" Vundle plugin manager
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 Plugin 'VundleVim/Vundle.vim'
-
-"""" Common Programming Support
-Plugin 'Townk/vim-autoclose'
-Plugin 'scrooloose/nerdtree'
-
-"""" Programming Section
-" Python-mode
 Plugin 'klen/python-mode'
+Plugin 'jamshedvesuna/vim-markdown-preview'
+Plugin 'Townk/vim-autoclose'
+Plugin 'puppetlabs/puppet-syntax-vim'
+Plugin 'rodjek/vim-puppet'
+call vundle#end()
+
+""" Common Configurations
+filetype plugin indent on
+syntax on
+set number
+set backspace=indent,eol,start
+
 setlocal foldmethod=expr
 setlocal foldexpr=pymode#folding#expr(v:lnum)
 setlocal foldtext=pymode#folding#text()
+
+""" Programming Section
+" Python-mode
 " Pylint configuration file
 let g:pymode_lint_config = '$HOME/.pylint.rc'
 let g:pymode_options_max_line_length=120
@@ -35,14 +37,5 @@ let g:pymode_options_max_line_length=120
 :autocmd WinEnter * if winnr('$') == 1 && ! empty(&buftype) && ! &modified | quit | endif
 
 " Markdown Preview
-" remember to install grip
-Plugin 'jamshedvesuna/vim-markdown-preview'
 let vim_markdown_preview_toggle=1
 let vim_markdown_preview_github=1
-
-" Puppet
-Plugin 'puppetlabs/puppet-syntax-vim'
-Plugin 'rodjek/vim-puppet'
-
-"""" Mappings configurationn
-map <C-n> :NERDTreeToggle<CR>
