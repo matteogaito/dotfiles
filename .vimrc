@@ -28,7 +28,6 @@ if (has("termguicolors"))
 endif
 let base16colorspace=256  " Access colors present in 256 colorspace
 " colorscheme spacegray
-Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 """" Programming Section
 " Python-mode
