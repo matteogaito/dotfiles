@@ -7,12 +7,6 @@
 set nocompatible
 filetype off
 
-"""" Common Configurations
-set number
-filetype plugin on
-syntax on
-set backspace=indent,eol,start
-
 """" Vundle plugin manager
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
@@ -22,14 +16,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Townk/vim-autoclose'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-
-"syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_enable_signs=1
-let g:syntastic_quiet_messages = {'level': 'warnings'}
-let g:syntastic_auto_loc_list=1
 
 """" Interface 
 Plugin 'ryanoasis/vim-devicons'
@@ -42,6 +28,7 @@ if (has("termguicolors"))
 endif
 let base16colorspace=256  " Access colors present in 256 colorspace
 " colorscheme spacegray
+Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 """" Programming Section
 " Python-mode
@@ -58,5 +45,17 @@ Plugin 'jamshedvesuna/vim-markdown-preview'
 let vim_markdown_preview_toggle=1
 let vim_markdown_preview_github=1
 
+" Puppet
+Plugin 'puppetlabs/puppet-syntax-vim'
+Plugin 'rodjek/vim-puppet'
+
 """" Mappings configurationn
 map <C-n> :NERDTreeToggle<CR>
+
+"""" Common Configurations
+set number
+filetype plugin on
+filetype plugin indent on
+syntax on
+set autoindent
+set backspace=indent,eol,start
