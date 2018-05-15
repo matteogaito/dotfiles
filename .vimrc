@@ -24,15 +24,19 @@ syntax on
 set number
 set backspace=indent,eol,start
 
-setlocal foldmethod=expr
-setlocal foldexpr=pymode#folding#expr(v:lnum)
-setlocal foldtext=pymode#folding#text()
-
 """ Programming Section
 " Python-mode
 " Pylint configuration file
 let g:pymode_lint_config = '$HOME/.pylint.rc'
 let g:pymode_options_max_line_length=120
+" syntax highlighting
+let g:pymode_syntax = 1
+let g:pymode_syntax_all = 1
+let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+let g:pymode_syntax_space_errors = g:pymode_syntax_all
+" Autofold code
+let g:pymode_folding = 1
+let g:pymode_indent = 1
 " close pylint window when close file
 :autocmd WinEnter * if winnr('$') == 1 && ! empty(&buftype) && ! &modified | quit | endif
 
