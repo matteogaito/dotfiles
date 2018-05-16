@@ -16,6 +16,7 @@ Plugin 'jamshedvesuna/vim-markdown-preview'
 Plugin 'Townk/vim-autoclose'
 Plugin 'puppetlabs/puppet-syntax-vim'
 Plugin 'rodjek/vim-puppet'
+Plugin 'davidhalter/jedi-vim'
 call vundle#end()
 
 """ Common Configurations

@@ -1,5 +1,5 @@
 # Fortune
-bash ~/.my-fortune.sh
+bash ~/bin/.my-fortune.sh
 
 ## Add the key in order to use key forwarding
 if [ `ssh-add -l | grep -c "/Users/matte/.ssh/id_rsa"` -eq 0 ];
