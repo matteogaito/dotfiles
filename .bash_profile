@@ -31,5 +31,16 @@ HISTFILESIZE=20000
 ##Iterm2
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
+# Z Jump directory
+# https://github.com/rupa/z
+export zbin="${HOME}/bin/z.sh"
+if [ ! -e "${zbin}" ]
+then
+	echo "Downloading z.sh from github"
+	wget --quiet https://raw.githubusercontent.com/rupa/z/master/z.sh -O ${zbin} && \
+		echo "z.sh downloaded"
+fi
+source ${zbin}
+
 [ -f ~/.bash_aliases ] && source ~/.bash_aliases          	# aliases
 [ -f ~/.bash_aliases_work ] && source ~/.bash_aliases_work	# aliases
