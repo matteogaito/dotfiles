@@ -44,3 +44,5 @@ let g:pymode_indent = 1
 " Markdown Preview
 let vim_markdown_preview_toggle=1
 let vim_markdown_preview_github=1
+
+set encoding=utf-8
