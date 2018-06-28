@@ -17,6 +17,8 @@ Plugin 'Townk/vim-autoclose'
 Plugin 'puppetlabs/puppet-syntax-vim'
 Plugin 'rodjek/vim-puppet'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'scrooloose/vim-slumlord'
+Plugin 'aklt/plantuml-syntax'
 call vundle#end()
 
 """ Common Configurations
@@ -40,6 +42,9 @@ let g:pymode_folding = 1
 let g:pymode_indent = 1
 " close pylint window when close file
 :autocmd WinEnter * if winnr('$') == 1 && ! empty(&buftype) && ! &modified | quit | endif
+
+" Yaml
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " Markdown Preview
 let vim_markdown_preview_toggle=1
