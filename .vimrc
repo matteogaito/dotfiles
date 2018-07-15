@@ -27,6 +27,9 @@ syntax on
 set number
 set backspace=indent,eol,start
 
+""" Searching
+set incsearch
+
 """ Programming Section
 " Python-mode
 " Pylint configuration file

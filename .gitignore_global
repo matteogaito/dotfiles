@@ -2,3 +2,5 @@
 .DS_Store
 vim-markdown-preview.html
 develop
+.vagrant
+*-console.log
