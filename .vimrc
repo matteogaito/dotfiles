@@ -19,6 +19,8 @@ Plugin 'rodjek/vim-puppet'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'scrooloose/vim-slumlord'
 Plugin 'aklt/plantuml-syntax'
+Plugin 'vim-airline/vim-airline'            " status line
+Plugin 'vim-airline/vim-airline-themes'     " status line
 call vundle#end()
 
 """ Common Configurations
@@ -26,6 +28,9 @@ filetype plugin indent on
 syntax on
 set number
 set backspace=indent,eol,start
+set cursorline                              " highlight the line under the cursor
+set title                                   " set the terminal title to the current file
+set showcmd                                 " shows partial commands
 
 """ Searching
 set incsearch
