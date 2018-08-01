@@ -52,7 +52,10 @@ let g:pymode_indent = 1
 :autocmd WinEnter * if winnr('$') == 1 && ! empty(&buftype) && ! &modified | quit | endif
 
 " Yaml
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+:autocmd BufRead *.yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+" Html
+:autocmd BufRead *.html setlocal ts=4 sts=4 sw=4 expandtab
 
 " Markdown Preview
 let vim_markdown_preview_toggle=1
