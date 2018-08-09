@@ -19,8 +19,11 @@ Plugin 'rodjek/vim-puppet'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'scrooloose/vim-slumlord'
 Plugin 'aklt/plantuml-syntax'
-Plugin 'vim-airline/vim-airline'            " status line
-Plugin 'vim-airline/vim-airline-themes'     " status line
+Plugin 'vim-airline/vim-airline'            	" status line
+Plugin 'vim-airline/vim-airline-themes'     	" status line
+Plugin 'scrooloose/nerdtree.git'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'ctrlpvim/ctrlp.vim'			" Fuzzy Search
 call vundle#end()
 
 """ Common Configurations
@@ -60,5 +63,17 @@ let g:pymode_indent = 1
 " Markdown Preview
 let vim_markdown_preview_toggle=1
 let vim_markdown_preview_github=1
+
+""" NerdTree
+let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
+let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
+let g:NERDTreeShowBookmarks=1
+let g:nerdtree_tabs_focus_on_files=1
+let g:NERDTreeWinSize = 30
+let NERDTreeMinimalUI = 1         " Hides Press ? for help
+map <C-n> :NERDTreeToggle<CR>     " Show/Hide nerdtree ctrl + n
+:autocmd VimEnter * NERDTree      " Open Nerdtree at startup
+:autocmd VimEnter * wincmd p      " Focus on file
+
 
 set encoding=utf-8
