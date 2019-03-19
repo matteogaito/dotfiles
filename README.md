@@ -32,4 +32,13 @@ dotfile remote add origin git@github.com:matteogaito/dotfiles.git
 dotfile push origin master
 ````
 
-
+## Restore dotfiles on new installation
+Clone the bare repository
+````
+git clone --bare git@github.com:matteogaito/dotfiles.git $HOME/.dotfiles
+````
+Recover the files
+````
+git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME checkout
+````
+After this operation you will have again your configurations file and i hope "dotfile" alias command.
