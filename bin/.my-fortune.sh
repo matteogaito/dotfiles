@@ -30,4 +30,9 @@ function show_fortune {
     $(which fortune) -s | $command -f $cow
 }
 
-show_fortune
+FORTUNEBIN="$(which fortune 2>1 | grep -v 'which: no fortune in')"
+
+if [ ! -z $FORTUNEBIN ];
+then
+	show_fortune
+fi
